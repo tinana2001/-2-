@@ -579,6 +579,61 @@ int main() {
 
 			if (ybr == hash[nomerybr])
 			{
+				ybr = vsv;
+
+				for (int ht = 0; ht < n1; ht++) {
+					if (hash[nomerybr] = vsv)
+					{
+						cout << "" << "" << ht << "." << "" << "" << hash[ht] << "\t" << "	";
+
+					}
+
+				}
+
+
+
+			}
+			else {
+
+				for (int v = 0; v < 100 - nomerybr; v++) {
+					if (ybr != hash[nomerybr])
+					{
+						int nomerybr0 = ((ybr * ybr) % 10000 / 100);
+						nomerybr = (nomerybr0 + nampr) % n1;
+						nampr++;
+						if (ybr == hash[nomerybr]) {
+							ybr = vsv;
+
+							for (int ht = 0; ht < n1; ht++) {
+								if (hash[nomerybr] = ybr)
+								{
+									cout << "" << "" << ht << "." << "" << "" << hash[ht] << "\t" << "	";
+
+								}
+
+							}
+						}
+					}
+
+
+
+				}
+
+				if (ybr != hash[nomerybr]) {
+					cout << "такого элемента нет" << endl;
+				}
+			}
+			break;
+			/*int nampr = 1;
+			int ybr, vsv;
+			cout << "введите число, которое хотите заменить" << endl;
+			cin >> ybr;
+			cout << "введите число на которое хотите заменть" << endl;
+			cin >> vsv;
+			int nomerybr = ((ybr * ybr) % 10000 / 100);
+
+			if (ybr == hash[nomerybr])
+			{
 				for (int i = 0; i < 100; i++) {
 					if (vsv = hash[nomerybr])
 					cout << "это число уже существует";
@@ -634,7 +689,7 @@ int main() {
 				}
 			}
 			
-			break;
+			break;*/
 		}
 
 		}
