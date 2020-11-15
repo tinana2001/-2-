@@ -152,7 +152,7 @@ int main() {
 				
 				else {
 
-					for (int v = 0; v < 100 - nomerelem; v++) {
+					for (int v = 0; v < 100; v++) {
 						if (elem != hash[nomerelem])
 						{
 							int nomerelem0 = nomerelem;
@@ -198,7 +198,7 @@ int main() {
 				}
 				else {
 
-					for (int v = 0; v < 100 - nomerelem; v++) {
+					for (int v = 0; v < 100; v++) {
 						if (randelem != hash[nomerelem])
 						{
 							int nomerelem0 = nomerelem;
@@ -277,7 +277,7 @@ int main() {
 				}
 				else {
 					
-					for (int v = 0; v < 100 - nomerelem; v++) {
+					for (int v = 0; v < 100; v++) {
 						
 						if (elem != hash[nomerelem])
 						{
@@ -348,7 +348,7 @@ int main() {
 				}
 				else {
 
-					for (int v = 0; v < 100 - nomerelem; v++) {
+					for (int v = 0; v < 100; v++) {
 						if (randelem != hash[nomerelem])
 						{
 							int nomerelem0 = nomerelem;
@@ -421,7 +421,7 @@ int main() {
 				}
 				else {
 
-					for (int v = 0; v < 100 - nomerelem; v++) {
+					for (int v = 0; v < 100; v++) {
 						if (elem != hash[nomerelem])
 						{
 							int nomerelem0 = nomerelem;
@@ -440,7 +440,7 @@ int main() {
 					{
 						nomerelem = ((elem * elem) % 10000 / 100);
 						nomerpr = 1;
-						for (int c = 0; c < n1 - nomerelem; c++) {
+						for (int c = 0; c < n1; c++) {
 							
 							if ((hash[nomerelem] == NULL)||(hash[nomerelem] == -1)) {
 								hash[nomerelem] == elem;
@@ -496,7 +496,7 @@ int main() {
 				}
 				else {
 
-					for (int v = 0; v < 100 - nomerelem; v++) {
+					for (int v = 0; v < 100; v++) {
 						if (randelem != hash[nomerelem])
 						{
 							int nomerelem0 = nomerelem;
