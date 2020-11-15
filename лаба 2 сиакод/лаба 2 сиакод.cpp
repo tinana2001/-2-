@@ -252,7 +252,7 @@ int main() {
 				int elem;
 				int nampr = 1;
 				cin >> elem;
-
+				
 
 				nomerelem = ((elem * elem) % 10000 / 100);
 
@@ -260,28 +260,30 @@ int main() {
 				{
 					
 					elem = -1;
-					
+				
 					cout << "элемент был удален из ячейки " << nomerelem << endl;
 					for (int ht = 0; ht < n1; ht++) {
+						
 						if (hash[nomerelem] = elem)
 						{
 							cout << "" << "" << ht << "." << "" << "" << hash[ht] << "\t" << "	";
 							
 						}
-
+						
 					}
 					
-
+					
 					
 					
 				}
 				else {
 					
-					for (int v = 0; v < 100; v++) {
+					for (int v = 0; v < 100-nomerelem; v++) {
 						
 						if (elem != hash[nomerelem])
 						{
-							int nomerelem0 = nomerelem;
+							
+							int nomerelem0 = ((elem * elem) % 10000 / 100);
 							nomerelem = (nomerelem0 + nampr) % n1;
 							nampr++;
 							
@@ -289,7 +291,7 @@ int main() {
 
 
 								elem = -1;
-								
+
 								cout << "элемент был удален из ячейки " << nomerelem << endl;
 								for (int ht = 0; ht < n1; ht++) {
 									if (hash[nomerelem] = elem)
@@ -297,7 +299,7 @@ int main() {
 										cout << "" << "" << ht << "." << "" << "" << hash[ht] << "\t" << "	";
 										
 									}
-
+									
 								}
 								
 							}
@@ -348,7 +350,7 @@ int main() {
 				}
 				else {
 
-					for (int v = 0; v < 100; v++) {
+					for (int v = 0; v < 100-nomerelem; v++) {
 						if (randelem != hash[nomerelem])
 						{
 							int nomerelem0 = nomerelem;
@@ -421,10 +423,11 @@ int main() {
 				}
 				else {
 
-					for (int v = 0; v < 100; v++) {
+					for (int v = 0; v < 100-nomerelem; v++) {
 						if (elem != hash[nomerelem])
 						{
-							int nomerelem0 = nomerelem;
+							
+							int nomerelem0 = ((elem * elem) % 10000 / 100);
 							nomerelem = (nomerelem0 + nomerpr) % n1;
 							nomerpr++;
 							if (elem == hash[nomerelem]) {
@@ -440,21 +443,20 @@ int main() {
 					{
 						nomerelem = ((elem * elem) % 10000 / 100);
 						nomerpr = 1;
-						for (int c = 0; c < n1; c++) {
+						for (int c = 0; c < n1-nomerelem; c++) {
 							
 							if ((hash[nomerelem] == NULL)||(hash[nomerelem] == -1)) {
 								hash[nomerelem] == elem;
 
 							}
 							else {
-								while ((hash[nomerelem] != NULL) || (hash[nomerelem] == -1))
+								if ((hash[nomerelem] != NULL) || (hash[nomerelem] == -1))
 								{
 									int nomerelem0 = ((elem * elem) % 10000 / 100);
 									nomerelem = (nomerelem0 + nomerpr) % n1;
 									nomerpr++;
 
 								}
-
 							}
 
 						}
@@ -496,7 +498,7 @@ int main() {
 				}
 				else {
 
-					for (int v = 0; v < 100; v++) {
+					for (int v = 0; v < 100-nomerelem; v++) {
 						if (randelem != hash[nomerelem])
 						{
 							int nomerelem0 = nomerelem;
