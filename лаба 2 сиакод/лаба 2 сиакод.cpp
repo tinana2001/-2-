@@ -278,7 +278,7 @@ int main() {
 				}
 				else {
 					
-					for (int v = 0; v < 100-nomerelem; v++) {
+					for (int v = 0; v < 100; v++) {
 						
 						if (elem != hash[nomerelem])
 						{
@@ -350,7 +350,7 @@ int main() {
 				}
 				else {
 
-					for (int v = 0; v < 100-nomerelem; v++) {
+					for (int v = 0; v < 100; v++) {
 						if (randelem != hash[nomerelem])
 						{
 							int nomerelem0 = nomerelem;
@@ -423,7 +423,7 @@ int main() {
 				}
 				else {
 
-					for (int v = 0; v < 100-nomerelem; v++) {
+					for (int v = 0; v < 100; v++) {
 						if (elem != hash[nomerelem])
 						{
 							
@@ -443,7 +443,7 @@ int main() {
 					{
 						nomerelem = ((elem * elem) % 10000 / 100);
 						nomerpr = 1;
-						for (int c = 0; c < n1-nomerelem; c++) {
+						for (int c = 0; c < n1; c++) {
 							
 							if ((hash[nomerelem] == NULL)||(hash[nomerelem] == -1)) {
 								hash[nomerelem] == elem;
@@ -498,7 +498,7 @@ int main() {
 				}
 				else {
 
-					for (int v = 0; v < 100-nomerelem; v++) {
+					for (int v = 0; v < 100; v++) {
 						if (randelem != hash[nomerelem])
 						{
 							int nomerelem0 = nomerelem;
@@ -518,7 +518,7 @@ int main() {
 						nomerelem = ((randelem * randelem) % 10000 / 100);
 						nomerpr = 1;
 						
-						for (int c = 0; c < n1 - nomerelem; c++) {
+						for (int c = 0; c < n1; c++) {
 							
 							if ((hash[nomerelem] == NULL) || (hash[nomerelem] == -1)) {
 								hash[nomerelem] == randelem;
@@ -571,14 +571,18 @@ int main() {
 		{
 			int nampr = 1;
 			int ybr, vsv;
+			
 			cout << "введите число, которое хотите заменить" << endl;
 			cin >> ybr;
 			cout << "введите число на которое хотите заменть" << endl;
 			cin >> vsv;
-			int nomerybr = ((ybr * ybr) % 10000 / 100);
 
+			
+			int nomerybr = ((ybr * ybr) % 10000 / 100);
+			
 			if (ybr == hash[nomerybr])
 			{
+				
 				ybr = vsv;
 
 				for (int ht = 0; ht < n1; ht++) {
@@ -595,7 +599,7 @@ int main() {
 			}
 			else {
 
-				for (int v = 0; v < 100 - nomerybr; v++) {
+				for (int v = 0; v < 100; v++) {
 					if (ybr != hash[nomerybr])
 					{
 						int nomerybr0 = ((ybr * ybr) % 10000 / 100);
@@ -623,6 +627,7 @@ int main() {
 					cout << "такого элемента нет" << endl;
 				}
 			}
+
 			break;
 			/*int nampr = 1;
 			int ybr, vsv;
@@ -634,23 +639,14 @@ int main() {
 
 			if (ybr == hash[nomerybr])
 			{
-				for (int i = 0; i < 100; i++) {
-					if (vsv = hash[nomerybr])
-					cout << "это число уже существует";
-					return 0;
-				}
-				ybr = vsv;
-
 				for (int ht = 0; ht < n1; ht++) {
-					if (hash[nomerybr] = vsv)
-					{
-						cout << "" << "" << ht << "." << "" << "" << hash[ht] << "\t" << "	";
-
+					if (vsv = hash[nomerybr]) {
+						cout << "это число уже существует";
+						return 0;
 					}
-
+					
 				}
-
-
+			
 
 			}
 			else {
@@ -664,13 +660,16 @@ int main() {
 						nampr++;
 						if (ybr == hash[nomerybr]) {
 							for (int i = 0; i < 100; i++) {
-								if (vsv = hash[nomerybr])
+								if (vsv = hash[nomerybr]) {
 									cout << "это число уже существует";
-								return 0;
+									return 0;
+								}
+								
 							}
 							ybr = vsv;
 
 							for (int ht = 0; ht < n1; ht++) {
+								
 								if (hash[nomerybr] = ybr)
 								{
 									cout << "" << "" << ht << "." << "" << "" << hash[ht] << "\t" << "	";
