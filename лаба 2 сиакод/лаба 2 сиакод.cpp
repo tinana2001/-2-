@@ -5,8 +5,6 @@
 #include <iostream>
 #include <time.h>
 #include <ctime>
-#include <iomanip>// для setw
-#include <string>
 using namespace std;
 
 int main()
@@ -268,7 +266,7 @@ int main()
 					elem = -1;
 
 					cout << "элемент был удален из ячейки " << nomerelem << endl;
-					for (int ht = 0; ht < n1; ht++) {
+					for (int ht=0; ht < n1; ht++) {
 						if (hash[ht] == -1) {
 							m--;
 						}
@@ -618,89 +616,140 @@ int main()
 
 		case 4:
 		{
-			int k1 = 0;
+			int nomerybr;
+			int nomervsv;
+			int i = 0;
+			int nomerpr = 1;
 			int nampr = 1;
 			int ybr, vsv;
-
 			cout << "введите число, которое хотите заменить" << endl;
 			cin >> ybr;
 			cout << "введите число на которое хотите заменть" << endl;
 			cin >> vsv;
-
-
-			int nomerybr = ((ybr * ybr) % 10000 / 100);
-			for (int ht = 0; ht < n1; ht++) {
-				if (hash[ht] == -1) {
-					m++;
-				}
+			
+			nomervsv = ((vsv * vsv) % 10000 / 100);
+			nomerybr = ((ybr * ybr) % 10000 / 100);
+			if (nomervsv == nomerybr) {
+				hash[nomervsv] = -1;
 			}
+			for (int i = 0; i < 1; i++) {
+				nomerybr = ((ybr * ybr) % 10000 / 100);
+				/////////////удаляем элемент без коллизий///////////
 
-			if (ybr == hash[nomerybr])
-			{
+				if (ybr == hash[nomerybr])
+				{
 
-				ybr = vsv;
+					ybr = -1;
+
+					cout << "элемент был удален из ячейки " << nomerybr << endl;
+
+				}
+				else {
+
+					for (int v = 0; v < 100; v++) {
+
+						if (ybr != hash[nomerybr])
+						{
+							k1++;
+							int nomerybr0 = ((ybr * ybr) % 10000 / 100);
+							nomerybr = (nomerybr0 + nampr) % n1;
+							nampr++;
+
+							if (ybr == hash[nomerybr]) {
+
+
+								ybr = -1;
+
+								cout << "элемент был удален из ячейки " << nomerybr << endl;
+							}
+						}
+					}
+				}
+
+
+				////////////добавление элемента/////////////////////
+				nomervsv = ((vsv * vsv) % 10000 / 100);
+				
+				if (vsv == hash[nomervsv])
+				{
+					cout << "этот элемент уже существует," << "находится в ячейке " << nomervsv << endl;
+
+				}
+				else {
+
+					for (int v = 0; v < 100; v++) {
+						if (vsv != hash[nomervsv])
+						{
+
+							int nomervsv0 = ((vsv * vsv) % 10000 / 100);
+							nomervsv = (nomervsv0 + nomerpr) % n1;
+							nomerpr++;
+							if (vsv == hash[nomervsv]) {
+								cout << "этот элемент уже существует," << "находится в ячейке " << nomervsv << endl;
+							}
+						}
+
+
+
+					}
+
+					if (vsv != hash[nomervsv])
+					{
+						nomervsv = ((vsv * vsv) % 10000 / 100);
+						nomerpr = 1;
+						for (int c = 0; c < n1; c++) {
+
+							if ((hash[nomervsv] == NULL) || (hash[nomervsv] == -1)) {
+								hash[nomervsv] == vsv;
+
+							}
+							else {
+								if ((hash[nomervsv] != NULL) || (hash[nomervsv] == -1))
+								{
+
+									k1++;
+									int nomervsv0 = ((vsv * vsv) % 10000 / 100);
+									nomervsv = (nomervsv0 + nomerpr) % n1;
+									nomerpr++;
+
+								}
+							}
+
+						}
+						m++;
+						cout << "число добавлено в ячейку  " << nomervsv << endl;
+					}
+				}
 
 				for (int ht = 0; ht < n1; ht++) {
-					if (hash[nomerybr] = vsv)
+
+
+					if ((hash[nomerybr] = ybr) && (hash[nomervsv] = vsv))
 					{
 
 						cout << "" << "" << ht << "." << "" << "" << hash[ht] << "\t" << "	";
 
 					}
 
-				}
-				cout << "Коэффициент заполнения таблицы: " << double(m) / double(n1) << endl;
-				cout << "Среднее число проб:" << double(k1 + p) / double(m) << endl;
-				cout << "количество шагов" << k1 + p << endl;
-				cout << "количество элементов" << m << endl;
 
+
+				}
 
 			}
-			else {
-
-				for (int v = 0; v < 100; v++) {
-					if (ybr != hash[nomerybr])
-					{
-
-						int nomerybr0 = ((ybr * ybr) % 10000 / 100);
-						nomerybr = (nomerybr0 + nampr) % n1;
-						nampr++;
-						k1++;
-						if (ybr == hash[nomerybr]) {
-							ybr = vsv;
-
-							for (int ht = 0; ht < n1; ht++) {
-								if (hash[nomerybr] = ybr)
-								{
-									cout << "" << "" << ht << "." << "" << "" << hash[ht] << "\t" << "	";
-
-								}
-
-							}
-						}
-					}
 
 
-
-				}
-				cout << endl << "Коэффициент заполнения таблицы: " << double(m) / double(n1) << endl;
-				cout << "Среднее число проб:" << double(k1 + p) / double(m) << endl;
-				cout << "количество шагов" << k1 + p << endl;
-				cout << "количество элементов" << m << endl;
-
-				if (ybr != hash[nomerybr]) {
-					cout << "такого элемента нет" << endl;
-				}
-			}
 
 			break;
+		}
 
+		}
 
-
+  }
+			
 			// конец while 
 			return 0;
-		}
-		}
-	}
+		
+		
+	
 }
 	
