@@ -354,6 +354,7 @@ int main()
 			int i = 0;
 			int nomerpr = 1;
 			int nampr = 1;
+			
 			int ybr, vsv;
 			cout << "введите число, которое хотите заменить" << endl;
 			cin >> ybr;
@@ -364,12 +365,17 @@ int main()
 			nomerybr = ((ybr * ybr) % 10000 / 100);
 			///////удаление в замене////////
 			
+					
+       /* if (nomervsv == nomerybr) {
+			 hash[nomervsv] = -1;
+		    }*/
+			//if (nomervsv != 0 && nomerybr != 0) {
 				if (nomervsv == nomerybr) {
 					hash[nomervsv] = -1;
 				}
+			//} 
 			
 			
-			for (int i = 0; i < 1; i++) {
 				nomerybr = ((ybr * ybr) % 10000 / 100);
 
 				if (ybr == hash[nomerybr])
@@ -395,77 +401,82 @@ int main()
 
 								ybr = -1;
 
+								hash[nomerybr] = ybr;
 								cout << "элемент был удален из ячейки " << nomerybr << endl;
+								
 								
 							}
 						}
 					}
 				}
-				////////////добавление элемента в замене /////////////////////
-				nomervsv = ((vsv * vsv) % 10000 / 100);
 				
-				if (vsv == hash[nomervsv])
-				{
-					cout << "этот элемент уже существует," << "находится в ячейке  " << nomervsv << endl;
-					ybr = ybr0;
-					
-				}
-				else {
-					int nomervsv0 = ((vsv * vsv) % 10000 / 100);
-					for (int v = 0; v <= nomervsv0; v++) {
+			
+				////////////добавление элемента в замене /////////////////////
+			
+				for (int i = 0; i < 1; i++) {
+					nomervsv = ((vsv * vsv) % 10000 / 100);
+
+					if (vsv == hash[nomervsv])
+					{
+						cout << "этот элемент уже существует," << "находится в ячейке  " << nomervsv << endl;
+						ybr = ybr0;
+
+					}
+					else {
+						int nomervsv0 = ((vsv * vsv) % 10000 / 100);
+						for (int v = 0; v <= nomervsv0; v++) {
+							if (vsv != hash[nomervsv])
+							{
+
+								int nomervsv0 = ((vsv * vsv) % 10000 / 100);
+								nomervsv = (nomervsv0 + nomerpr) % n1;
+								nomerpr++;
+								if (vsv == hash[nomervsv]) {
+									cout << "этот элемент уже существует," << "находится в ячейке " << nomervsv << endl;
+									ybr = ybr0;
+								}
+							}
+						}
+
 						if (vsv != hash[nomervsv])
 						{
 
-							int nomervsv0 = ((vsv * vsv) % 10000 / 100);
-							nomervsv = (nomervsv0 + nomerpr) % n1;
-							nomerpr++;
-							if (vsv == hash[nomervsv]) {
-								cout << "этот элемент уже существует," << "находится в ячейке " << nomervsv << endl;
-								ybr = ybr0;
-							}
-						}
-					}
+							nomervsv = ((vsv * vsv) % 10000 / 100);
+							nomerpr = 1;
+							for (int c = 0; c < n1; c++) {
+								if ((hash[nomervsv] == 0) || (hash[nomervsv] == -1)) {
 
-					if (vsv != hash[nomervsv])
-					{
-						int nomerybr0 = ((ybr * ybr) % 10000 / 100);
-						nomervsv0 = ((vsv * vsv) % 10000 / 100);
-						nomervsv = ((vsv * vsv) % 10000 / 100);
-						nomerpr = 1;
-						for (int c = 0; c <= 100; c++) {
-							
-							if ((hash[nomervsv] == NULL) || (hash[nomervsv] == -1)) {
-								
 									hash[nomervsv] == vsv;
-							}
-							else {
-								if ((hash[nomervsv] != NULL) || (hash[nomervsv] == -1))
-								{
+								}
+								else {
 
 									k1++;
 									int nomervsv0 = ((vsv * vsv) % 10000 / 100);
 									nomervsv = (nomervsv0 + nomerpr) % n1;
 									nomerpr++;
-									
+
+
 								}
 							}
+							m++;
+							hash[nomervsv] = vsv;
+							cout << "число добавлено в ячейку  " << nomervsv << endl;
+							
 						}
-						m++;
-						cout << "число добавлено в ячейку  " << nomervsv << endl;
+					}
+					
+					for (int ht = 0; ht < n1; ht++) {
+						
+						
+						//if ((hash[nomervsv] = vsv)&& (hash[nomerybr]=ybr))
+
+						{
+
+							cout << "" << "" << ht << "." << "" << "" << hash[ht] << "\t" << "	";
+
+						}
 					}
 				}
-
-				for (int ht = 0; ht < n1; ht++) {
-
-
-					if ((hash[nomerybr] = ybr) && (hash[nomervsv] = vsv))
-					{
-
-						cout << "" << "" << ht << "." << "" << "" << hash[ht] << "\t" << "	";
-
-					}
-				}
-			}
 			break;
 		}
 		}
