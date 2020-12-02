@@ -23,12 +23,12 @@ int main()
 
 	long int mas[100]; //Массив генерируемых элементов
 
-	srand(time(0));
+	//srand(time(0));
 
 	int m = 51; //Количество генерируемых элементов
 	while (k < m) {
 		f = 0;
-		tmp = rand() % 599 + 400;
+		tmp = rand() % 587 + 400;
 
 		for (int i = 0; i < k; i++) { //чтобы не было повторяющихся
 
@@ -454,7 +454,7 @@ int main()
 									int nomervsv0 = ((vsv * vsv) % 10000 / 100);
 									nomervsv = (nomervsv0 + nomerpr) % n1;
 									nomerpr++;
-
+									
 
 								}
 							}
@@ -465,10 +465,11 @@ int main()
 						}
 					}
 					
+					
 					for (int ht = 0; ht < n1; ht++) {
 						
 						
-						//if ((hash[nomervsv] = vsv)&& (hash[nomerybr]=ybr))
+						if ((hash[nomervsv] = vsv)&& (hash[nomerybr]=ybr))
 
 						{
 
